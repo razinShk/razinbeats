@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify</title>
+    <link rel="stylesheet" href="spotify-player-css.css">
+</head>
+
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <nav>
+                <ul class="sidebar-menu">
+                    <li><a href="#">Your Library</a></li>
+                    <li><a href="#">Playlists</a></li>
+                    <!-- Add more menu items -->
+                </ul>
+            </nav>
+        </aside>
+        <main class="main-content">
+            <div class="top-bar">
+                <input type="text" class="search-bar" placeholder="What do you want to play?">
+                <button>Explore Premium</button>
+            </div>
+            <nav class="content-nav">
+                <button>All</button>
+                <button>Music</button>
+                <button>Podcasts</button>
+            </nav>
+            <div class="playlists-grid">
+                <!-- Add playlist items here -->
+            </div>
+        </main>
+        <div class="now-playing-overlay">
+            <!-- Add now playing content here -->
+        </div>
+    </div>
+    <footer class="now-playing-bar">
+        <!-- Add now playing bar content here -->
+            <div class="player-container">
+                <div class="now-playing">
+                    <div class="track-info">
+                        <h1 class="track-title">At My Worst (feat. Kehlani)</h1>
+                        <div class="track-actions">
+                            <button aria-label="More options" class="more-options-button">
+                                <!-- SVG icon for more options -->
+                            </button>
+                            <button aria-label="Close" class="close-button">
+                                <!-- SVG icon for close -->
+                            </button>
+                        </div>
+                    </div>
+                    <div class="artist-info">
+                        <a href="/artist/1W7FNibLa0O0b572tB2w7t" class="artist-name">Pink Sweat$</a>
+                        <a href="/artist/0cGUm45nv7Z6M6qdXYQGTX" class="artist-name">Kehlani</a>
+                    </div>
+                    <div class="track-actions">
+                        <button class="copy-link-button" aria-label="Copy Song Link">
+                            <!-- SVG icon for copy link -->
+                        </button>
+                        <button class="add-to-playlist-button" aria-label="Add to playlist">
+                            <!-- SVG icon for add to playlist -->
+                        </button>
+                    </div>
+                </div>
+            
+                <div class="artist-bio">
+                    <button type="button" aria-label="Pink Sweat$" class="artist-bio-button">
+                        <div class="artist-image">
+                            <!-- Artist image background -->
+                        </div>
+                        <div class="artist-details">
+                            <h2>About the artist</h2>
+                            <div class="artist-name">Pink Sweat$</div>
+                            <div class="artist-listeners">6,849,223 monthly listeners</div>
+                            <button class="follow-button">Follow</button>
+                        </div>
+                    </button>
+                    <div class="artist-biography">
+                        <!-- Artist biography text -->
+                    </div>
+                </div>
+            
+                <div class="credits-section">
+                    <h2>Credits</h2>
+                    <button class="show-all-button">Show all</button>
+                    <div class="credit-item">
+                        <div class="credit-info">
+                            <a href="/artist/1W7FNibLa0O0b572tB2w7t">Pink Sweat$</a>
+                            <span class="credit-role">Main Artist, Producer</span>
+                        </div>
+                        <button class="follow-button">Follow</button>
+                    </div>
+                    <!-- More credit items -->
+                </div>
+            
+                <div class="queue-section">
+                    <h2>Next in queue</h2>
+                    <button class="open-queue-button">Open queue</button>
+                    <ul class="queue-list">
+                        <li class="queue-item">
+                            <div class="track-image">
+                                <!-- Track image -->
+                            </div>
+                            <div class="track-info">
+                                <p class="track-name">Heat Waves</p>
+                                <p class="track-artist">Glass Animals</p>
+                            </div>
+                            <button class="more-options-button" aria-label="More options for Heat Waves">
+                                <!-- SVG icon for more options -->
+                            </button>
+                        </li>
+                        <!-- More queue items -->
+                    </ul>
+                </div>
+            </div>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title> Music Player</title>
+ <style>
+  body {
+   font-family: Arial, sans-serif;
+   max-width: 800px;
+   margin: 0 auto;
+   padding: 20px;
+   background-color: #f0f0f0;
+  }
+
+  h1 {
+   text-align: center;
+   color: #333;
+  }
+
+  #player {
+   background-color: #fff;
+   border-radius: 10px;
+   padding: 20px;
+   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  #playlist {
+   list-style-type: none;
+   padding: 0;
+  }
+
+  #playlist li {
+   cursor: pointer;
+   padding: 10px;
+   border-bottom: 1px solid #eee;
+  }
+
+  #playlist li:hover {
+   background-color: #f9f9f9;
+  }
+
+  #playlist li.active {
+   background-color: #e0e0e0;
+   font-weight: bold;
+  }
+
+  audio {
+   width: 100%;
+   margin-top: 20px;
+  }
+ </style>
+</head>
+
+<body>
+ <h1>Simple Music Player</h1>
+ <div id="player">
+  <audio id="audio" controls></audio>
+  <ul id="playlist"></ul>
+ </div>
+
+ <script>
+  const playlist = [
+   { title: "505 - Arctic Monkeys", file: "SpotifyMate.com - 505 - Arctic Monkeys.mp3" },
+   { title: "Do I Wanna Know? - Arctic Monkeys", file: "SpotifyMate.com - Do I Wanna Know_ - Arctic Monkeys.mp3" },
+   { title: "Get You The Moon (feat. Snøw) - Kina", file: "SpotifyMate.com - Get You The Moon (feat. Snøw) - Kina.mp3" },
+   { title: "I Wanna Be Yours - Arctic Monkeys", file: "SpotifyMate.com - I Wanna Be Yours - Arctic Monkeys.mp3" },
+   { title: "One For The Road - Arctic Monkeys", file: "SpotifyMate.com - One For The Road - Arctic Monkeys.mp3" },
+   { title: "R U Mine? - Arctic Monkeys", file: "SpotifyMate.com - R U Mine_ - Arctic Monkeys.mp3" },
+   { title: "Way down We Go - KALEO", file: "SpotifyMate.com - Way down We Go - KALEO.mp3" }
+  ];
+
+  const audio = document.getElementById('audio');
+  const playlistElement = document.getElementById('playlist');
+
+  function loadPlaylist() {
+   playlist.forEach((song, index) => {
+    const li = document.createElement('li');
+    li.textContent = song.title;
+    li.addEventListener('click', () => loadSong(index));
+    playlistElement.appendChild(li);
+   });
+  }
+
+  function loadSong(index) {
+   const song = playlist[index];
+   audio.src = 'songs/' + song.file;
+   audio.play();
+   updateActiveClass(index);
+  }
+
+  function updateActiveClass(index) {
+   const items = playlistElement.getElementsByTagName('li');
+   for (let i = 0; i < items.length; i++) {
+    items[i].classList.remove('active');
+   }
+   items[index].classList.add('active');
+  }
+
+  audio.addEventListener('ended', () => {
+   let currentIndex = playlist.findIndex(song => song.file === audio.src.split('/').pop());
+   let nextIndex = (currentIndex + 1) % playlist.length;
+   loadSong(nextIndex);
+  });
+
+
+  loadPlaylist();
+  loadSong(1);
+ </script>
+</body>
+
+</html>

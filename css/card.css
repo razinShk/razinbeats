@@ -1,0 +1,64 @@
+.music-player-container {
+ width: 350px;
+ padding: 20px;
+ background-color: #f4f4f4;
+ border-radius: 20px;
+ box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+ text-align: center;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+}
+
+.album-cover img {
+ width: 150px;
+ height: 150px;
+ border-radius: 15px;
+ margin-bottom: 20px;
+}
+
+.controls {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+
+button {
+ background: none;
+ border: none;
+ font-size: 24px;
+ margin: 0 10px;
+ cursor: pointer;
+ color: #333;
+}
+
+button:hover {
+ color: #1db954;
+}
+
+.play-btn i {
+ font-size: 32px;
+}
+
+.progress-container {
+ margin-top: 15px;
+ width: 80%;
+}
+
+.progress-bar {
+ width: 100%;
+ cursor: pointer;
+ -webkit-appearance: none;
+ background-color: #ccc;
+ height: 5px;
+ border-radius: 5px;
+}
+
+.progress-bar::-webkit-slider-thumb {
+ -webkit-appearance: none;
+ height: 15px;
+ width: 15px;
+ background-color: #1db954;
+ border-radius: 50%;
+ box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+}
